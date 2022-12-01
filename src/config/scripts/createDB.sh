@@ -1,0 +1,1 @@
+mysql -h 34.170.61.82 -u admin -p < /home/isildur1/Escritorio/incloodle/backend-incloodle/src/config/scripts/create.sql;
