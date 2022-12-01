@@ -43,11 +43,12 @@ const getCourseInfo = async (req, res, next) => {
 const getReportController = async (req, res) => {
   try {
     let average = 0;
-    const studentName = req.userPayload?.name ?? "Esteban Arias";
+    let studentName = null;
     const courseName = req.courseName;
     const { student_id, course_id } = req.query;
     const [examsFound] = await getExamsRatedService(student_id, course_id);
     const dataExams = examsFound.reduce((prev, curr) => {
+      if (studentName === null) studentName = curr?.studentName;
       const initDate = curr.init_date;
       const finishDate = curr.finish_date;
       average += parseFloat(curr.score / examsFound.length);

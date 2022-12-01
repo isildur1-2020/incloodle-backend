@@ -14,7 +14,8 @@ const getExamsRatedService = (student_id, course_id) =>
       exam.link,
       exam.type,
       exam.num_of_questions,
-      exam.course_id
+      exam.course_id,
+      student.name AS studentName
      FROM studentExam
      JOIN exam 
      ON studentExam.exam_id = exam.exam_id
