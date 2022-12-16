@@ -10,12 +10,13 @@ const createExamController = async (req, res) => {
         err: true,
         message: "You must upload a file",
       });
-    const { name, course_id, num_of_questions } = req.query;
+    const { name, course_id, num_of_questions, max_score } = req.query;
     const [examCreated] = await createExamService(
       name,
       link,
       course_id,
-      num_of_questions
+      num_of_questions,
+      max_score
     );
     const { insertId: exam_id } = examCreated;
     const [studentsFound] = await getStudentByCourseIdService(course_id);

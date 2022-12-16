@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS course (
 
 CREATE TABLE IF NOT EXISTS enrollment (
 	enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
-	final_score DECIMAL(2, 1),
+	final_score DECIMAL(3, 1),
 	course_id INT,
 	student_id INT,
 	FOREIGN KEY (course_id) REFERENCES course(course_id) ON DELETE CASCADE,
@@ -85,6 +85,7 @@ CREATE TABLE IF NOT EXISTS exam (
 	exam_id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(64) NOT NULL,
 	link TEXT NOT NULL,
+	max_score DECIMAL(3, 1) NOT NULL,
 	type INTEGER NOT NULL DEFAULT 1,
 	num_of_questions INT NOT NULL,
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -96,7 +97,7 @@ CREATE TABLE IF NOT EXISTS exam (
 CREATE TABLE IF NOT EXISTS studentExam (
 	studentExam_id INT AUTO_INCREMENT PRIMARY KEY,
 	is_pendient BOOLEAN NOT NULL DEFAULT 1,
-	score DECIMAL(2, 1),
+	score DECIMAL(3, 1),
 	init_date DATETIME,
 	finish_date DATETIME,
 	student_id INT,
@@ -113,3 +114,46 @@ CREATE TABLE IF NOT EXISTS answer (
 	studentExam_id INT NOT NULL,
 	FOREIGN KEY (studentExam_id) REFERENCES studentExam(studentExam_id) ON DELETE CASCADE
 );
+
+-- INSERT INTO
+-- 	`admin` (`email`, `name`, `passwd`, `rol`, `is_active`)
+-- VALUES
+-- 	(
+-- 		'admin@gmail.com',
+-- 		'administrator',
+-- 		'password',
+-- 		0,
+-- 		1
+-- 	);
+-- INSERT INTO
+-- 	`teacher` (
+-- 		`name`,
+-- 		`email`,
+-- 		`passwd`,
+-- 		`rut`,
+-- 		`rol`,
+-- 		`is_active`
+-- 	)
+-- VALUES
+-- 	(
+-- 		'Tebaida Point',
+-- 		'teacher@gmail.com',
+-- 		'password',
+-- 		'3S76F98HBT86',
+-- 		1,
+-- 		1
+-- 	);
+-- INSERT INTO
+-- 	`student` (`name`, `email`, `passwd`, `rut`, `rol`)
+-- VALUES
+-- 	(
+-- 		'Linux Torvalds',
+-- 		'student@gmail.com',
+-- 		'password',
+-- 		'9K92Y36IUV56',
+-- 		2
+-- 	);
+-- INSERT INTO
+-- 	`course` (`name`, `period`, `teacher_id`)
+-- VALUES
+-- 	('Penetration Testing', '2023-1', 1);
