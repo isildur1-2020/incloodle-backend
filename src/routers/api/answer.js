@@ -40,7 +40,7 @@ const sendAnswerController = [
 ];
 router.post("/", isStudent, sendAnswerController);
 router.post("/rate-exam", isTeacher, rateExamController);
-router.put("/", isTeacher, updateAnswerController);
+router.put("/rate-answer", isTeacher, updateAnswerController);
 router.delete("/:studentExam_id", deleteEnrollToExamController);
 
 module.exports = router;
