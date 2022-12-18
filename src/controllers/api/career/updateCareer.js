@@ -7,7 +7,7 @@ const updateCareerController = async (req, res) => {
     if (career_id === undefined || name === undefined)
       return res.status(400).json({
         err: true,
-        message: "`career_id` and `name` field is required",
+        message: "`career_id` and `name` fields is required",
       });
     if (isNaN(parseInt(career_id)))
       return res.status(400).json({

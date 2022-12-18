@@ -6,12 +6,12 @@ const deleteCareerController = async (req, res) => {
     if (career_id === undefined)
       return res.status(400).json({
         err: true,
-        message: "`career_id` params is required",
+        message: "`career_id` param is required",
       });
     if (isNaN(parseInt(career_id)))
       return res.status(400).json({
         err: true,
-        message: "`career_id` params must be a number",
+        message: "`career_id` param must be a number",
       });
     await deleteCareerService(career_id);
     const message = `Career with id = ${career_id} was deleted succesfully!`;

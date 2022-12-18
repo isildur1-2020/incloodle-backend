@@ -1,6 +1,6 @@
-const createCareerService = require("../../../services/database/career/createCareer");
+const createPeriodService = require("../../../services/database/period/createPeriod");
 
-const createCareerController = async (req, res) => {
+const createPeriodController = async (req, res) => {
   try {
     const { name } = req.body;
     if (name === undefined)
@@ -8,8 +8,8 @@ const createCareerController = async (req, res) => {
         err: true,
         message: "`name` field is required",
       });
-    await createCareerService(name);
-    const message = `Career ${name} was created succesfully!`;
+    await createPeriodService(name);
+    const message = `Period ${name} was created succesfully!`;
     console.log(message);
     return res.status(200).json({
       err: false,
@@ -24,4 +24,4 @@ const createCareerController = async (req, res) => {
   }
 };
 
-module.exports = createCareerController;
+module.exports = createPeriodController;
