@@ -21,3 +21,7 @@ DROP TABLE instructive;
 DROP TABLE student;
 
 DROP TABLE teacher;
+
+DROP TABLE career;
+
+DROP TABLE period;
