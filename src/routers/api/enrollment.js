@@ -14,8 +14,12 @@ const {
   deleteEnrollmentValidator,
   deleteEnrollmentController,
 } = require("../../controllers/api/enrollment/delete");
+const {
+  getStudentsWithoutCourseController,
+} = require("../../controllers/api/enrollment/getStudentsWithoutCourse");
 const { isMyCourse } = require("../../middlewares/isMyCourse");
 
+router.get("/:course_id/without-course", getStudentsWithoutCourseController);
 router.get(
   "/studentByCourse",
   getStudentByCourseValidator,

@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS answer (
 	answer_id INT AUTO_INCREMENT PRIMARY KEY,
 	question_id INT NOT NULL,
 	comment TINYTEXT,
-	score DECIMAL(3, 1) NOT NULL,
+	score DECIMAL(3, 1),
 	answer_text TINYTEXT NOT NULL,
 	is_correct BOOLEAN NOT NULL DEFAULT 0,
 	studentExam_id INT NOT NULL,

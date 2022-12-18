@@ -8,6 +8,7 @@ const getAllExamsPendient = (course_id) =>
       studentExam.exam_id,
       exam.name AS exam_name,
       exam.link,
+      exam.max_score,
       student.name AS student_name
      FROM studentExam
      JOIN exam 
