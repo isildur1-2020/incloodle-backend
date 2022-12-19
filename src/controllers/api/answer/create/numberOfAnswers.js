@@ -11,10 +11,10 @@ const numberOfAnswers = async (req, res, next) => {
         message: `The exam with id = ${exam_id} doesn't exists`,
       });
     const { num_of_questions } = examFound?.[0];
-    if (num_of_questions !== dataAnswers?.length)
+    if (dataAnswers?.length > num_of_questions)
       return res.status(400).json({
         err: true,
-        message: `num_of_questions = ${num_of_questions} isn't equal to number of answers = ${dataAnswers?.length}`,
+        message: `num_of_questions = ${num_of_questions} dont should more than number of answers = ${dataAnswers?.length}`,
       });
     next();
   } catch (err) {
