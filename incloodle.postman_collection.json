@@ -1,0 +1,1945 @@
+{
+	"info": {
+		"_postman_id": "509b4026-a504-47d6-80b5-c24b5584f21f",
+		"name": "incloodle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17512849"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "student@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "remember",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/auth",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VERIFY TOKEN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInJvbCI6MCwiaWF0IjoxNjY5MDgzMzAwLCJleHAiOjE2NzAzNzkzMDB9.kj_Z58scG_LL_cAp3FdGtaJHmsM7Q6-RJ-Z0Ki0w_O8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/auth/verify-token",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"verify-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "CREATE ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Administrator",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "root_password",
+									"value": "{{root_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/admin",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL ADMINS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "root_password",
+									"value": "{{root_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/admin",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ADMIN",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "root_password",
+									"value": "{{root_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/admin/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY EMAIL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "root_password",
+									"value": "{{root_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/admin/email?email=admin@gmail.com",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"admin",
+								"email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "CREATE TEACHER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "teacher@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Linus Torvalds",
+									"type": "text"
+								},
+								{
+									"key": "rut",
+									"value": "A39HT87IJF23",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/teacher",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL TEACHERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/teacher",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE TEACHER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/teacher/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE TEACHER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Juan Santana",
+									"type": "text"
+								},
+								{
+									"key": "rut",
+									"value": "3819364863",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/teacher/4",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL EXAMS TO RATE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/answer/1/exam",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer",
+								"1",
+								"exam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ANSWERS BY EXAM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/answer/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RATE ANSWER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "answer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "is_correct",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "Es correcto, pero cualquier numero elevado a 0 es 1.",
+									"type": "text"
+								},
+								{
+									"key": "score",
+									"value": "5.5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/answer/rate-answer",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer",
+								"rate-answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RATE EXAM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "studentExam_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "score",
+									"value": "4.9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/answer/rate-exam",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer",
+								"rate-exam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESET PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "currentPassword",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "newPassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/teacher/reset-password",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET STUDENT REPORT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/teacher/report?course_id=1&student_id=1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"teacher",
+								"report"
+							],
+							"query": [
+								{
+									"key": "course_id",
+									"value": "1"
+								},
+								{
+									"key": "student_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "CREATE STUDENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "student@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "North Vereda",
+									"type": "text"
+								},
+								{
+									"key": "rut",
+									"value": "23H8GT8W9",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/student",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL STUDENTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJuYW1lIjoic3VkbyIsInJvbCI6MCwiaXNfYWN0aXZlIjoxLCJjcmVhdGVkQXQiOiIyMDIyLTExLTEyVDA4OjI3OjQ1LjAwMFoiLCJ1cGRhdGVkQXQiOm51bGwsImlhdCI6MTY2ODYyMzM0MSwiZXhwIjoxNjY5OTE5MzQxfQ.fVRbR1nHIVzUCfYj5bg_Tc6oYbdhyE7-QKSUnpe2aP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/student",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE STUDENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE STUDENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Linux Torvalds",
+									"type": "text"
+								},
+								{
+									"key": "rut",
+									"value": "98H763FF34",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/student/8",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET COURSE BY STUDENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/courseByStudent",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"courseByStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESET PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "currentPassword",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "newPassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/student/reset-password",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET EXAMS PENDIENT BY COURSE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/1/exams-pendient",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"1",
+								"exams-pendient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL DOCUMENTS BY STUDENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/allDocuments",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"allDocuments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL EXAMS BY STUDENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/allExams",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"allExams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL EXAMS QUALIFIED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/student/1/exams-rated",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"student",
+								"1",
+								"exams-rated"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{student_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "CREATE COURSE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "React Native Advanced",
+									"type": "text"
+								},
+								{
+									"key": "period",
+									"value": "2023-1",
+									"type": "text"
+								},
+								{
+									"key": "teacher_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "career",
+									"value": "Ingenieria Inversa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/course",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL COURSES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/course",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COURSE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Curso Docker Compose",
+									"type": "text"
+								},
+								{
+									"key": "period",
+									"value": "2023-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/course/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COURSE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/course/5",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET COURSES BY TEACHER ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/course/2/teacher",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course",
+								"2",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SET FINAL SCORE OF A COURSE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "final_score",
+									"value": "3.9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/course/final-score",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"course",
+								"final-score"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{teacher_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "document",
+			"item": [
+				{
+					"name": "CREATE DOCUMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/home/isildur1/Imágenes/Captura de pantalla de 2022-11-22 15-12-39.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/document?name=Calculus Steward&course_id=3",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"document"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Calculus Steward"
+								},
+								{
+									"key": "course_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE DOCUMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/document/11",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"document",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL DOCUMENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/document",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DOCUMENTS BY COURSE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/document/5/course",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"document",
+								"5",
+								"course"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{teacher_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "exam",
+			"item": [
+				{
+					"name": "CREATE EXAM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam",
+									"type": "file",
+									"src": "/home/isildur1/Imágenes/Captura de pantalla de 2022-11-22 15-12-39.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/exam?name=React Native Final Exam&course_id=1&num_of_questions=3&max_score=70",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"exam"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "React Native Final Exam"
+								},
+								{
+									"key": "course_id",
+									"value": "1"
+								},
+								{
+									"key": "num_of_questions",
+									"value": "3"
+								},
+								{
+									"key": "max_score",
+									"value": "70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE EXAM",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/exam/6",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"exam",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL EXAMS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/exam",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"exam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET EXAMS BY COURSE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/exam/6/course",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"exam",
+								"6",
+								"course"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{teacher_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "enrollment",
+			"item": [
+				{
+					"name": "GET ALL ENROLLMENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/enrollment/all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"enrollment",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET STUDENTS BY COURSE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/enrollment/studentByCourse?course_id=2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"enrollment",
+								"studentByCourse"
+							],
+							"query": [
+								{
+									"key": "course_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD STUDENT TO A COURSE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/enrollment/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"enrollment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE STUDENT OF A COURSE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/enrollment/?course_id=6&student_id=8",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"enrollment",
+								""
+							],
+							"query": [
+								{
+									"key": "course_id",
+									"value": "6"
+								},
+								{
+									"key": "student_id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET STUDENTS WITHOUT COURSE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/enrollment/1/without-course",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"enrollment",
+								"1",
+								"without-course"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{teacher_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "answer",
+			"item": [
+				{
+					"name": "SEND EXAM ANSWER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "exam_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "answers",
+									"value": "[{\"question_id\":1,\"answer_text\":\"Correcto\"},{\"question_id\":2,\"answer_text\":\"false\"},{\"question_id\":3,\"answer_text\":\"False\"}]",
+									"type": "text"
+								},
+								{
+									"key": "init_date",
+									"value": "Wed Nov 30 2022",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/answer",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL ENROLLMENTS TO EXAM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/answer",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ENROLLMENT TO EXAM",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/answer/5",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"answer",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50X2lkIjoxLCJlbWFpbCI6InN0dWRlbnRAZ21haWwuY29tIiwibmFtZSI6Ikp1bGlhbiBQZXJleiIsInJ1dCI6IjIzSDhHVDhXOSIsInJvbCI6MiwibGFzdF9jb25uZWN0aW9uIjpudWxsLCJsYXN0X2Rpc2Nvbm5lY3Rpb24iOm51bGwsImNyZWF0ZWRBdCI6IjIwMjItMTEtMjhUMjM6MDc6MjYuMDAwWiIsInVwZGF0ZWRBdCI6bnVsbCwiaWF0IjoxNjY5NjUxMzA0LCJleHAiOjE2NzA5NDczMDR9.eRSTtPJjvTEcVgL5_WuIaIDeIgHxBFHXn7uvFwUytDM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "career",
+			"item": [
+				{
+					"name": "GET ALL CAREERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/career",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"career"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CAREER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ingenieria abstracta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/career",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"career"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CAREER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ingenieria de software",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/career/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"career",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CAREER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/career/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"career",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "period",
+			"item": [
+				{
+					"name": "GET ALL PERIODS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/period",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"period"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PERIOD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "2023-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/period",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"period"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PERIOD",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "2023-2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/v1/api/period/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"period",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PERIOD",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/v1/api/period/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"period",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.set(\"variable_key\", \"variable_value\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:64578",
+			"type": "string"
+		}
+	]
+}
